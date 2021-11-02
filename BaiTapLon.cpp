@@ -4,6 +4,7 @@ class score{
 	protected:
 		float s_toan, s_tin, s_eng;
 };
+
 class infoST:public score{
 	private:
 		float GPA;
@@ -93,5 +94,5 @@ void SList::addST(SinhVien v){
 int main(){
 	SinhVien s;
 	int n;
-	s.NhapDS(s, n);
+	Nhap();
 	}
