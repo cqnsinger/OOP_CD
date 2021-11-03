@@ -2,34 +2,32 @@
 #include<vector>
 using namespace std;
 class score{
-	protected:
-		float s_toan, s_tin, s_eng;
-};
-class infoST:public score{
 	private:
-		float GPA;
-		string ID, Class, Major;
+		float s_toan, s_tin, s_eng;
 	public:
-		void nhapI(){
-			cout<<"Nhap ma sinh vien: ";
-			fflush(stdin);
-			getline(cin, ID);
-			cout<<"Nhap chuyen nganh: ";
-			fflush(stdin);
-			getline(cin, Major);
-			cout<<"Nhap lop: ";
-			fflush(stdin);
-			getline(cin, Class);
+		void NhapS(){
 			cout<<"Nhap diem Toan: ";
 			cin>>s_toan;
 			cout<<"Nhap diem Tin: ";
 			cin>>s_tin;
 			cout<<"Nhap diem Tieng Anh: ";
 			cin>>s_eng;
-			GPA=(s_toan+s_tin+s_eng)/3;
-			}
-		void xuatI(){
-		
+			
+		}
+};
+class infoST:public score{
+	private:
+		float GPA;
+		string ID, Class;
+	public:
+		void NhapI(){
+			cout<<"Nhap ma sinh vien: ";
+			fflush(stdin);
+			getline(cin, ID);
+			cout<<"Nhap lop: ";
+			fflush(stdin);
+			getline(cin, Class);
+			NhapS();
 			}
 	};
 class SinhVien:public infoST{
@@ -38,18 +36,29 @@ class SinhVien:public infoST{
 	public:
 		void Nhap();
 		void Xuat();
-		void NhapDS(SinhVien s, int &n);
-		void XuatDS(SinhVien s, int n);
 	};
+void SinhVien::Nhap(){
+	cout<<"Nhap ho ten: ";
+	fflush(stdin);
+	getline(cin,Name);
+	cout<<"Nhap gioi tinh: ";
+	fflush(stdin);
+	getline(cin,Gender);
+	cout<<"Nhap ngay sinh: ";
+	fflush(stdin);
+	getline(cin,DOB);
+	NhapI();
+	}
 class ThaoTac{
 	private:
 		vector <SinhVien *> SV;
 	public:
-		void Nhap();
+		void NhapDS();
 		void Xuat();
 };
 int main(){
 	SinhVien s;
+	ThaoTac act;
 	int n;
-	s.NhapDS(s, n);
+	s.Nhap();
 	}
