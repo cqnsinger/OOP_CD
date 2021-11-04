@@ -1,6 +1,8 @@
 #include<iostream>
-#include<vector>
-#include"dohoa.h"
+#include<windows.h>
+#include "dohoa.h"
+#include<conio.h>
+#include<cstdlib>
 using namespace std;
 class score{
 	private:
