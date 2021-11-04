@@ -88,7 +88,6 @@ class ThaoTac{
 		void NhapDS();
 		void XuatDS();
 };
-	///test
 int main(){
 	SinhVien s;
 	ThaoTac act;
