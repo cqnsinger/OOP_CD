@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include"dohoa.h"
 using namespace std;
 class score{
 	private:
@@ -12,7 +13,14 @@ class score{
 			cin>>s_tin;
 			cout<<"Nhap diem Tieng Anh: ";
 			cin>>s_eng;
-			
+		float getToan(){
+			return s_toan;
+		}
+		float getTin(){
+			return s_tin;
+		}
+		float getEng(){
+			return s_eng;
 		}
 };
 class infoST:public score{
@@ -28,14 +36,29 @@ class infoST:public score{
 			fflush(stdin);
 			getline(cin, Class);
 			NhapS();
+			GPA=(getToan()+getTin()+getEng())/3;
 			}
+		void XuatI(int i){
+			gotoxy(80, i+5);
+			cout<<ID;
+			gotoxy(95, i+5);
+			cout<<Class;
+			gotoxy(115, i+5);
+			cout<<getToan();
+			gotoxy(130, i+5);
+			cout<<getTin();
+			gotoxy(145, i+5);
+			cout<<getEng();
+			gotoxy(160, i+5);
+			cout<<GPA;
+		}
 	};
 class SinhVien:public infoST{
 	private: 
 		string Name, Gender, DOB;
 	public:
 		void Nhap();
-		void Xuat();
+		void Xuat(int i);
 	};
 void SinhVien::Nhap(){
 	cout<<"Nhap ho ten: ";
@@ -49,12 +72,21 @@ void SinhVien::Nhap(){
 	getline(cin,DOB);
 	NhapI();
 	}
+void SinhVien::Xuat(int i){
+	gotoxy(15, i+5);
+	cout<<Name;
+	gotoxy(40, i+5);
+	cout<<Gender;
+	gotoxy(60, i+5);
+	cout<<DOB;
+	XuatI(i);
+	}
 class ThaoTac{
 	private:
 		vector <SinhVien *> SV;
 	public:
 		void NhapDS();
-		void Xuat();
+		void XuatDS();
 };
 int main(){
 	SinhVien s;
