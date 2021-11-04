@@ -13,6 +13,7 @@ class score{
 			cin>>s_tin;
 			cout<<"Nhap diem Tieng Anh: ";
 			cin>>s_eng;
+		}
 		float getToan(){
 			return s_toan;
 		}
