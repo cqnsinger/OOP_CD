@@ -4,6 +4,7 @@ class score{
 	protected:
 		float s_toan, s_tin, s_eng;
 };
+//test
 class infoST:public score{
 	private:
 		float GPA;
