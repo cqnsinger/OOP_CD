@@ -117,13 +117,13 @@ void ThaoTac::GPASort(){
             }
 	}
 void ThaoTac::NameSort(){
-for(int i=0;i<SV.size()-1;i++){
-	for(int j=i+1;j<SV.size();j++){
-		if(strcmp(Sv.at(i)->Name),(SV.at(j)->Name))<0){
-			SinhVien *k = SV.at(i);
-            		SV.at(i)=SV.at(j);
-            		SV.at(j)=k;
-		  	}
+	for(int i=0;i<SV.size()-1;i++){
+		for(int j=i+1;j<SV.size();j++){
+		   if((SV.at(i)->getName()).compare(SV.at(j)->getName())>0){
+				SinhVien *k = SV.at(i);
+            	SV.at(i)=SV.at(j);
+            	SV.at(j)=k;
+			}
 		}
 	} 
 }
