@@ -55,6 +55,9 @@ class infoST:public score{
 			gotoxy(160, i+5);
 			cout<<GPA;
 		}
+		float GetGPA(){
+			return GPA;
+		}
 	};
 class SinhVien:public infoST{
 	private: 
@@ -62,6 +65,7 @@ class SinhVien:public infoST{
 	public:
 		void Nhap();
 		void Xuat(int i);
+		string getName();
 	};
 void SinhVien::Nhap(){
 	cout<<"Nhap ho ten: ";
@@ -84,13 +88,28 @@ void SinhVien::Xuat(int i){
 	cout<<DOB;
 	XuatI(i);
 	}
+string getName(){
+	return Name;
+}
 class ThaoTac{
 	private:
 		vector <SinhVien *> SV;
 	public:
 		void NhapDS();
 		void XuatDS();
+		void SXDTB();
 };
+void ThaoTac::SXDTB(){
+	for(int i=0;i<SV.size()-1;i++){
+                for(int j=i+1;j<SV.size();j++){
+                    if(SV.at(i)->GetGPA() < SV.at(j)->GetGPA()){
+                        SinhVien *t= SV.at(i);
+                        SV.at(i)=SV.at(j);
+                        SV.at(j)=t;
+                    }
+                }
+            }
+	}
 int main(){
 	SinhVien s;
 	ThaoTac act;
