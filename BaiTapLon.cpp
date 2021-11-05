@@ -58,6 +58,9 @@ class infoST:public score{
 		float GetGPA(){
 			return GPA;
 		}
+		string GetID(){
+			return ID;
+		}
 	};
 class SinhVien:public infoST{
 	private: 
@@ -66,6 +69,7 @@ class SinhVien:public infoST{
 		void Nhap();
 		void Xuat(int i);
 		string getName();
+	
 	};
 void SinhVien::Nhap(){
 	cout<<"Nhap ho ten: ";
@@ -98,6 +102,8 @@ class ThaoTac{
 		void NhapDS();
 		void XuatDS();
 		void SXDTB();
+		void SXname();
+		void editinfo();
 };
 void ThaoTac::SXDTB(){
 	for(int i=0;i<SV.size()-1;i++){
@@ -110,6 +116,31 @@ void ThaoTac::SXDTB(){
                 }
             }
 	}
+void ThaoTac::SXname(){
+	for(int i=0;i<SV.size()-1;i++)
+	{
+		for(int j=i+1;j<SV.size();j++)
+		{
+		   if(strcmp(Sv.at(i)->Name,SV.at(j)->Name)<0)
+		  {
+				SinhVien *k = SV.at(i);
+            	SV.at(i)=SV.at(j);
+            	SV.at(j)=k;
+			}
+		}
+	} 
+}
+void ThaoTac::Editinfo(){
+	String t;
+	cout<<"Nhap MSSV can thay doi thong tin: ";
+	fflush(stdin);
+	getline(cin, t);
+	for(int i=0; i<SV.size()-1; i++)
+	{
+		if(strcmp(strupr(t), strupr(SV.at(i)->ID))==0)
+			Nhap();
+		}
+}
 int main(){
 	SinhVien s;
 	ThaoTac act;
