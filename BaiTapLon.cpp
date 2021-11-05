@@ -101,11 +101,11 @@ class ThaoTac{
 	public:
 		void NhapDS();
 		void XuatDS();
-		void SXDTB();
-		void SXname();
+		void GPASort();
+		void NameSort();
 		void editinfo();
 };
-void ThaoTac::SXDTB(){
+void ThaoTac::GPASort(){
 	for(int i=0;i<SV.size()-1;i++){
                 for(int j=i+1;j<SV.size();j++){
                     if(SV.at(i)->GetGPA() < SV.at(j)->GetGPA()){
@@ -116,17 +116,14 @@ void ThaoTac::SXDTB(){
                 }
             }
 	}
-void ThaoTac::SXname(){
-	for(int i=0;i<SV.size()-1;i++)
-	{
-		for(int j=i+1;j<SV.size();j++)
-		{
-		   if(strcmp(Sv.at(i)->Name,SV.at(j)->Name)<0)
-		  {
-				SinhVien *k = SV.at(i);
-            	SV.at(i)=SV.at(j);
-            	SV.at(j)=k;
-			}
+void ThaoTac::NameSort(){
+for(int i=0;i<SV.size()-1;i++){
+	for(int j=i+1;j<SV.size();j++){
+		if(strcmp(strupr(Sv.at(i)->Name),strupr(SV.at(j)->Name))<0){
+			SinhVien *k = SV.at(i);
+            		SV.at(i)=SV.at(j);
+            		SV.at(j)=k;
+		  	}
 		}
 	} 
 }
