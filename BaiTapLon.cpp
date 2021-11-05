@@ -103,7 +103,7 @@ class ThaoTac{
 		void XuatDS();
 		void GPASort();
 		void NameSort();
-		void editinfo();
+		void edit();
 };
 void ThaoTac::GPASort(){
 	for(int i=0;i<SV.size()-1;i++){
@@ -129,16 +129,21 @@ void ThaoTac::NameSort(){
 }
 void ThaoTac::edit(){
 	string k;
-	cout<<"Nhap MSSV can thay doi thong tin: ";
-	fflush(stdin);
-	getline(cin, k);
-	for(int i=0; i<SV.size()-1; i++){
-		if(k.compare(SV.at(i)->getID())==0){
-			SV.at(i)->Nhap();
-		}
-	else
-		cout<<"Khong tim thay MSSV can thay doi!!!";
+	if(SV.size()==0){
+		cout<<"Hien chua co sinh vien nao!!!";
 	}
+	else{
+		cout<<"Nhap MSSV can thay doi thong tin: ";
+		fflush(stdin);
+		getline(cin, k);
+		for(int i=0; i<SV.size()-1; i++){
+			if(k.compare(SV.at(i)->getID())==0){
+				SV.at(i)->Nhap();
+			}
+		else
+			cout<<"Khong tim thay MSSV can thay doi!!!";
+		}
+	}	
 }
 int main(){
 	SinhVien s;
