@@ -127,16 +127,18 @@ void ThaoTac::NameSort(){
 		}
 	} 
 }
-void ThaoTac::Editinfo(){
-	String t;
+void ThaoTac::edit(){
+	string k;
 	cout<<"Nhap MSSV can thay doi thong tin: ";
 	fflush(stdin);
-	getline(cin, t);
-	for(int i=0; i<SV.size()-1; i++)
-	{
-		if(strcmp(strupr(t), strupr(SV.at(i)->ID))==0)
-			Nhap();
+	getline(cin, k);
+	for(int i=0; i<SV.size()-1; i++){
+		if(k.compare(SV.at(i)->getID())==0){
+			SV.at(i)->Nhap();
 		}
+	else
+		cout<<"Khong tim thay MSSV can thay doi!!!";
+	}
 }
 int main(){
 	SinhVien s;
