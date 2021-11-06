@@ -3,18 +3,31 @@
 #include "dohoa.h"
 #include<conio.h>
 #include<cstdlib>
+#include <fstream>
 using namespace std;
+using namespace std;
+struct DOB{
+	int day;
+	int month;
+	int year;
+};
 class score{
 	private:
 		float s_toan, s_tin, s_eng;
 	public:
 		void NhapS(){
+			do{
 			cout<<"Nhap diem Toan: ";
 			cin>>s_toan;
+			}while(s_toan<0&&s_toan>10);
+			do{
 			cout<<"Nhap diem Tin: ";
 			cin>>s_tin;
+			}while(s_tin<0&&s_tin>10);
+			do{
 			cout<<"Nhap diem Tieng Anh: ";
-			cin>>s_eng;
+			cin>>s_eng;	
+			}while(s_eng<0&&s_eng>10);
 		}
 		float getToan(){
 			return s_toan;
@@ -42,17 +55,17 @@ class infoST:public score{
 			GPA=(getToan()+getTin()+getEng())/3;
 			}
 		void XuatI(int i){
-			gotoxy(80, i+5);
+			gotoxy(65, i+5);
 			cout<<ID;
-			gotoxy(95, i+5);
+			gotoxy(83, i+5);
 			cout<<Class;
-			gotoxy(115, i+5);
+			gotoxy(98, i+5);
 			cout<<getToan();
-			gotoxy(130, i+5);
+			gotoxy(113, i+5);
 			cout<<getTin();
-			gotoxy(145, i+5);
+			gotoxy(128, i+5);
 			cout<<getEng();
-			gotoxy(160, i+5);
+			gotoxy(143, i+5);
 			cout<<GPA;
 		}
 		float GetGPA(){
@@ -75,23 +88,43 @@ void SinhVien::Nhap(){
 	cout<<"Nhap ho ten: ";
 	fflush(stdin);
 	getline(cin,Name);
-	cout<<"Nhap gioi tinh: ";
+	cout<<"Nhap gioi tinh (1. Nam | 2. Nu | 3. Khac): ";
 	fflush(stdin);
-	getline(cin,Gender);
+	cin>>Gender;
 	cout<<"Nhap ngay sinh: ";
-	fflush(stdin);
-	getline(cin,DOB);
+	do{
+	cout<<"\n\tNhap ngay sinh: ";
+	cin>>d.day;
+	}while(d.day<=0&&d.day>31);
+	do{
+	cout<<"\tNhap thang sinh: ";
+	cin>>d.month;
+	}while(d.month<=0&&d.month>12);
+	do{
+	cout<<"\tNhap nam sinh: ";
+	cin>>d.year;
+	}while(d.year<0&&d.year>2021);
 	NhapI();
 	}
 void SinhVien::Xuat(int i){
 	gotoxy(15, i+5);
 	cout<<Name;
-	gotoxy(40, i+5);
-	cout<<Gender;
-	gotoxy(60, i+5);
-	cout<<DOB;
-	XuatI(i);
+	if(Gender == 1){
+		gotoxy(38, i+5);
+		cout<<"Nam";
 	}
+	else if(Gender == 2){
+		gotoxy(35, i+5);
+		cout<<"Nu";
+	}
+	else if(Gender == 3){
+		gotoxy(35, i+5);
+		cout<<"Khac";
+	}
+	gotoxy(50, i+5);
+	cout<<d.day<<"/"<<d.month<<"/"<<d.year;
+	XuatI(i);
+}
 string getName(){
 	return Name;
 }
@@ -105,6 +138,74 @@ class ThaoTac{
 		void NameSort();
 		void edit();
 };
+void ThaoTac::NhapDS(){
+	SinhVien *st;
+	int n;
+	cout<<"Nhap so luong Sinh Vien: ";
+	cin>>n;
+	if(n==0){
+		cout<<"\n********************************\n";
+		cout<<"Ban chua nhap Sinh Vien nao"<<endl;
+	}
+	else{
+		for(int i=0; i<n; i++){
+			cout<<"\n********************************\n";
+			st=new SinhVien;
+			st->Nhap();
+			SV.push_back(st);
+		}
+		cout<<"\n********************************\n";
+		cout<<"Nhap thanh cong!"<<endl;
+	}
+}
+void ThaoTac::XuatDS(){
+	gotoxy(60,1);
+	textcolor(223);
+	cout<<"                                                     ";
+	gotoxy(60,2);
+	cout<<"                  DANH SACH SINH VIEN                ";
+	gotoxy(60,3);
+	cout<<"                                                     ";
+	textcolor(224);
+	gotoxy(5,4);
+	cout<<"  STT                     ";
+	gotoxy(15, 4);
+	cout<<"Ho ten                     ";
+	gotoxy(38, 4);
+	cout<<"Gioi tinh               ";
+	gotoxy(50, 4);
+	cout<<"Ngay sinh               ";
+	gotoxy(65, 4);
+	cout<<"Ma sinh vien            ";
+	gotoxy(83, 4);
+	cout<<"Lop                    ";
+	gotoxy(98, 4);
+	cout<<"Diem Toan              ";
+	gotoxy(113, 4);
+	cout<<"Diem Tin                 ";
+	gotoxy(128, 4);
+	cout<<"Diem T.A                  ";
+	gotoxy(143, 4);
+	cout<<"Diem TB        ";
+	textcolor(15);
+	for(int i=0; i<SV.size(); i++){
+		gotoxy(7,i+5);
+		cout<<i+1;
+		SV.at(i)->Xuat(i);
+		}
+	if(SV.size()==0){
+		textcolor(4);
+		gotoxy(60,8);
+		cout<<"Chua co sinh vien nao duoc nhap vao danh sach!"<<endl;
+		textcolor(15);
+	}
+	else{
+		cout<<"\n\n\n\n\n********************************\n";
+		textcolor(10);
+		cout<<"Danh sach co "<<SV.size()<<" Sinh Vien."<<endl;
+		textcolor(15);	
+	}
+}
 void ThaoTac::GPASort(){
 	for(int i=0;i<SV.size()-1;i++){
                 for(int j=i+1;j<SV.size();j++){
