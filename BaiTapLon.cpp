@@ -237,7 +237,7 @@ void ThaoTac::edit(){
 		cout<<"Nhap MSSV can thay doi thong tin: ";
 		fflush(stdin);
 		getline(cin, k);
-		for(int i=0; i<SV.size()-1; i++){
+		for(int i=0; i<SV.size(); i++){
 			if(k.compare(SV.at(i)->getID())==0){
 				SV.at(i)->Nhap();
 			}
