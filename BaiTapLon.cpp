@@ -258,10 +258,10 @@ void ThaoTac::Edit(){
 				SV.at(i)->Nhap();
 				d++;
 			}
+		}
 		if(d==0){
 		textcolor(15);
 		cout <<"Khong tim thay MSSV can tim!!!";
-		}
 		}
 	}	
 }
