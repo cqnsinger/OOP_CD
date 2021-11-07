@@ -137,6 +137,9 @@ class ThaoTac{
 		void GPASort();
 		void NameSort();
 		void edit();
+		void SearchName();
+		void SearchMSV();
+		void Warning();
 };
 void ThaoTac::NhapDS(){
 	SinhVien *st;
@@ -245,6 +248,25 @@ void ThaoTac::edit(){
 			cout<<"Khong tim thay MSSV can thay doi!!!";
 		}
 	}	
+}
+void ThaoTac::SearchName(){
+	string SName;
+	cout <<"Nhap ten sinh vien can tim: ";
+	fflush(stdin);
+	getline(cin,SName);
+	for(int i=0; i<SV.size(); i++){
+		if(SName.compare(SV.at(i)->getName())==0){
+			SV.at(i)->Xuat();
+		}
+		else
+			cout <<"Khong tim thay sinh vien can tim!!!";
+	}
+}
+void ThaoTac::SearchMSV(){
+
+}
+void ThaoTac::Warning(){
+
 }
 int main(){
 	SinhVien s;
