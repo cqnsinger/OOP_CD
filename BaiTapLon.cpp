@@ -81,17 +81,25 @@ class infoST:public score{
 	};
 class SinhVien:public infoST{
 	private: 
-		string Name, Gender, DOB;
+		Name n;
+		string Gender, DOB;
 	public:
 		void Nhap();
 		void Xuat(int i);
-		string getName();
-	
+		string getFirstname(){
+			return n.Lastname;
+		}
+		string getLaststname(){
+			return n.Firstname;
+		}
 	};
 void SinhVien::Nhap(){
-	cout<<"Nhap ho ten: ";
+	cout<<"Nhap ho ten dem: ";
 	fflush(stdin);
-	getline(cin,Name);
+	getline(cin,n.Firstname);
+	cout<<"Nhap ten: ";
+	fflush(stdin);
+	getline(cin,n.Lastname);
 	cout<<"Nhap gioi tinh (1. Nam | 2. Nu | 3. Khac): ";
 	fflush(stdin);
 	cin>>Gender;
@@ -112,7 +120,7 @@ void SinhVien::Nhap(){
 	}
 void SinhVien::Xuat(int i){
 	gotoxy(15, i+5);
-	cout<<Name;
+	cout<<n.Firstname<<" "<<n.Lastname;
 	if(Gender == 1){
 		gotoxy(38, i+5);
 		cout<<"Nam";
@@ -129,9 +137,7 @@ void SinhVien::Xuat(int i){
 	cout<<d.day<<"/"<<d.month<<"/"<<d.year;
 	XuatI(i);
 }
-string getName(){
-	return Name;
-}
+
 class ThaoTac{
 	private:
 		vector <SinhVien *> SV;
@@ -227,7 +233,7 @@ void ThaoTac::GPASort(){
 void ThaoTac::NameSort(){
 	for(int i=0;i<SV.size()-1;i++){
 		for(int j=i+1;j<SV.size();j++){
-		   if((SV.at(i)->getName()).compare(SV.at(j)->getName())>0){
+		   if((SV.at(i)->getLastname()).compare(SV.at(j)->getLastname())>0){
 				SinhVien *k = SV.at(i);
             	SV.at(i)=SV.at(j);
             	SV.at(j)=k;
