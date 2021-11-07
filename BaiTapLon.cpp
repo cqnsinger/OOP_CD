@@ -243,6 +243,7 @@ void ThaoTac::NameSort(){
 }
 void ThaoTac::edit(){
 	string k;
+	int d=0;
 	if(SV.size()==0){
 		cout<<"Hien chua co sinh vien nao!!!";
 	}
@@ -253,9 +254,12 @@ void ThaoTac::edit(){
 		for(int i=0; i<SV.size(); i++){
 			if(k.compare(SV.at(i)->getID())==0){
 				SV.at(i)->Nhap();
+				d++;
 			}
-		else
-			cout<<"Khong tim thay MSSV can thay doi!!!";
+		if(d==0){
+		textcolor(15);
+		cout <<"Khong tim thay MSSV can tim!!!";
+		}
 		}
 	}	
 }
