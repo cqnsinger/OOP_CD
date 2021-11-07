@@ -11,6 +11,10 @@ struct DOB{
 	int month;
 	int year;
 };
+struct Name{
+	string Firstname;
+	string Lastname;
+};
 class score{
 	private:
 		float s_toan, s_tin, s_eng;
