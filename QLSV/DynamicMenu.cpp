@@ -114,61 +114,61 @@ int main(){
 					break;
 				case 2:
 					system("cls");
-					cout<<"Chuc nang 2!";
+					cout<<"Chuc nang 2!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 3:
 					system("cls");
-					cout<<"Chuc nang 3!";
+					cout<<"Chuc nang 3!"<<endl
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 4:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 4!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 5:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 5!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 6:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 6!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 7:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 7!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 8:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 8!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 9:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 9!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 10:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 10!"<<endl
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 11:
 					system("cls");
-					cout<<"Chuc nang 4!";
+					cout<<"Chuc nang 11!"<<endl
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
