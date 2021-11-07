@@ -265,15 +265,18 @@ void ThaoTac::edit(){
 }
 void ThaoTac::SearchName(){
 	string SName;
+	int dem;
 	cout <<"Nhap ten sinh vien can tim: ";
 	fflush(stdin);
 	getline(cin,SName);
 	for(int i=0; i<SV.size(); i++){
 		if(SName.compare(SV.at(i)->getName())==0){
-			SV.at(i)->Xuat();
+			SV.at(i)->Xuat(i);
+			dem++;
 		}
-		else
+		if(dem==0){
 			cout <<"Khong tim thay sinh vien can tim!!!";
+		}
 	}
 }
 void ThaoTac::SearchMSV(){
