@@ -173,14 +173,7 @@ void ThaoTac::NhapDS(){
 		cout<<"Nhap thanh cong!"<<endl;
 	}
 }
-void ThaoTac::XuatDS(){
-	gotoxy(60,1);
-	textcolor(223);
-	cout<<"                                                     ";
-	gotoxy(60,2);
-	cout<<"                  DANH SACH SINH VIEN                ";
-	gotoxy(60,3);
-	cout<<"                                                     ";
+void HeadTable(){
 	textcolor(224);
 	gotoxy(5,4);
 	cout<<"  STT                     ";
@@ -203,6 +196,16 @@ void ThaoTac::XuatDS(){
 	gotoxy(143, 4);
 	cout<<"Diem TB        ";
 	textcolor(15);
+	}
+void ThaoTac::XuatDS(){
+	gotoxy(60,1);
+	textcolor(223);
+	cout<<"                                                     ";
+	gotoxy(60,2);
+	cout<<"                  DANH SACH SINH VIEN                ";
+	gotoxy(60,3);
+	cout<<"                                                     ";
+	HeadTable();
 	for(int i=0; i<SV.size(); i++){
 		gotoxy(7,i+5);
 		cout<<i+1;
