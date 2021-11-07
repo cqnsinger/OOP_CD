@@ -276,6 +276,8 @@ void ThaoTac::SearchName(){
 	getline(cin,SName);
 	for(int i=0; i<SV.size(); i++){
 		if(SName.compare(SV.at(i)->getName())==0){
+			HeadTable();
+			cout<<"1";
 			SV.at(i)->Xuat(i);
 			dem++;
 		}
@@ -292,6 +294,8 @@ void ThaoTac::SearchMSV(){
 	getline(cin,SMSV);
 	for(int i=0; i<SV.size(); i++){
 		if(SMSV.compare(SV.at(i)->getMSV())==0){
+			HeadTable();
+			cout<<"1";
 			SV.at(i)->Xuat(i);
 			dem++;
 		}
