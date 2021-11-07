@@ -282,7 +282,20 @@ void ThaoTac::SearchName(){
 	}
 }
 void ThaoTac::SearchMSV(){
-
+	string SMSV;
+	int dem;
+	cout <<"Nhap MSV can tim: ";
+	fflush(stdin);
+	getline(cin,SMSV);
+	for(int i=0; i<SV.size(); i++){
+		if(SMSV.compare(SV.at(i)->getMSV())==0){
+			SV.at(i)->Xuat(i);
+			dem++;
+		}
+	if(dem==0){
+		cout<<"Khong tim thay sinh vien co MSV vua nhap!!!";
+	}
+	}
 }
 void ThaoTac::Warning(){
 
