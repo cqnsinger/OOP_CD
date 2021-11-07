@@ -146,9 +146,11 @@ class ThaoTac{
 		void XuatDS();
 		void GPASort();
 		void NameSort();
-		void edit();
+		void Edit();
 		void SearchName();
 		void SearchMSV();
+		void Delete();
+		void Add();
 		void Warning();
 };
 void ThaoTac::NhapDS(){
@@ -241,7 +243,7 @@ void ThaoTac::NameSort(){
 		}
 	} 
 }
-void ThaoTac::edit(){
+void ThaoTac::Edit(){
 	string k;
 	int d=0;
 	if(SV.size()==0){
@@ -284,6 +286,45 @@ void ThaoTac::SearchMSV(){
 }
 void ThaoTac::Warning(){
 
+}
+void ThaoTac::Delete(){
+	string k;
+	int dem;
+	if(SV.size()==0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Hien chua co sinh vien nao!!!"<<endl;
+		textcolor(15);
+	}
+	else{
+	cout<<"Nhap MSSV can xoa: ";
+	fflush(stdin);
+	getline(cin, k);
+		for(int i=0; i<SV.size(); i++){
+			if(k.compare(SV.at(i)->getID())==0){
+				SV.erase(SV.begin()+i);
+				textcolor(10);
+				cout<<"Xoa thanh cong!";
+				textcolor(15);
+				dem=1;
+			}
+			if(dem!=1){
+				textcolor(12);
+				cout<<"Khong tim thay MSSV can xoa!!!";
+				textcolor(15);	
+			}
+		}
+	}
+}
+void ThaoTac::Add(){
+	SinhVien *s;
+	s=new SinhVien;
+	s->Nhap();
+	SV.push_back(s);
+	cout<<"\n****************************\n";
+	textcolor(10);
+	cout<<"Them sinh vien thanh cong!";
+	textcolor(15);
 }
 int main(){
 	SinhVien s;
