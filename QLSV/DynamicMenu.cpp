@@ -162,13 +162,13 @@ int main(){
 					break;
 				case 10:
 					system("cls");
-					cout<<"Chuc nang 10!"<<endl
+					cout<<"Chuc nang 10!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 11:
 					system("cls");
-					cout<<"Chuc nang 11!"<<endl
+					cout<<"Chuc nang 11!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
