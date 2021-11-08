@@ -143,6 +143,7 @@ class ThaoTac{
 		vector <SinhVien *> SV;
 	public:
 		void NhapDS();
+		void HeadTable();
 		void XuatDS();
 		void GPASort();
 		void NameSort();
@@ -173,7 +174,7 @@ void ThaoTac::NhapDS(){
 		cout<<"Nhap thanh cong!"<<endl;
 	}
 }
-void HeadTable(){
+void ThaoTac::HeadTable(){
 	textcolor(224);
 	gotoxy(5,4);
 	cout<<"  STT                     ";
@@ -196,6 +197,11 @@ void HeadTable(){
 	gotoxy(143, 4);
 	cout<<"Diem TB        ";
 	textcolor(15);
+	for(int i=0; i<SV.size(); i++){
+		gotoxy(7,i+5);
+		cout<<i+1;
+		SV.at(i)->Xuat(i);
+		}
 	}
 void ThaoTac::XuatDS(){
 	gotoxy(60,1);
@@ -206,11 +212,6 @@ void ThaoTac::XuatDS(){
 	gotoxy(60,3);
 	cout<<"                                                     ";
 	HeadTable();
-	for(int i=0; i<SV.size(); i++){
-		gotoxy(7,i+5);
-		cout<<i+1;
-		SV.at(i)->Xuat(i);
-		}
 	if(SV.size()==0){
 		textcolor(4);
 		gotoxy(60,8);
