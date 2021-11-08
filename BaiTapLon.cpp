@@ -278,12 +278,13 @@ void ThaoTac::SearchName(){
 	for(int i=0; i<SV.size(); i++){
 		if(SName.compare(SV.at(i)->getName())==0){
 			HeadTable();
-			cout<<"1";
 			SV.at(i)->Xuat(i);
 			dem++;
 		}
 		if(dem==0){
+			textcolor(12);
 			cout <<"Khong tim thay sinh vien can tim!!!";
+			textcolor(15);
 		}
 	}
 }
@@ -296,12 +297,13 @@ void ThaoTac::SearchMSV(){
 	for(int i=0; i<SV.size(); i++){
 		if(SMSV.compare(SV.at(i)->getMSV())==0){
 			HeadTable();
-			cout<<"1";
 			SV.at(i)->Xuat(i);
 			dem++;
 		}
 	if(dem==0){
+		textcolor(12);
 		cout<<"Khong tim thay sinh vien co MSV vua nhap!!!";
+		textcolor(15);
 	}
 	}
 }
