@@ -138,12 +138,14 @@ int main(){
 					break;
 				case 6:
 					system("cls");
+					act.SearchName();
 					cout<<"Chuc nang 6!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
 					break;
 				case 7:
 					system("cls");
+					act.SearchMSV();
 					cout<<"Chuc nang 7!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
@@ -162,6 +164,7 @@ int main(){
 					break;
 				case 10:
 					system("cls");
+					act.Warning();
 					cout<<"Chuc nang 10!"<<endl;
 					cout<<"Nhan phim bat ki de tiep tuc!";
 					getch();
