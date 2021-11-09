@@ -308,7 +308,16 @@ void ThaoTac::SearchMSV(){
 	}
 }
 void ThaoTac::Warning(){
-
+	for(int i=0; i<SV.size(); i++){
+		if(SV.at(i)->getToan() < 4 && SV.at(i)->getTin() <4 && SV.at(i)->getEng() <4){
+			HeadTable();
+			SV.at(i)->Xuat(i);	
+		}
+		else
+			textcolor(12);
+			cout<<"Khong co sinh vien nao bi canh bao hoc tap!!!";
+			textcolor(15);
+	}
 }
 void ThaoTac::Delete(){
 	string k;
