@@ -435,6 +435,14 @@ void ThaoTac::Add(){
 		textcolor(15);
 	}
 }
+void ThaoTac::GhiFile(){
+	ofstream FileSt ("Student.txt");
+    FileSt<<"STT\t\tHo ten\t\t\tMa sinh vien\t\tDiem toan\tDiem tin\tDiem T.A\tDiem TB"<<endl;
+    for(int i; i<SV.size(); i++){
+    	FileSt<<i+1<<"\t\t"<<SV.at(i)->getName()<<"\t\t"<<SV.at(i)->getID()<<"\t\t"<<SV.at(i)->getToan()<<"\t\t"<<SV.at(i)->getTin()<<"\t\t"<<SV.at(i)->getEng()<<"\t\t"<<SV.at(i)->getGPA()<<"\t\t"<<endl;
+		}
+    FileSt.close();
+	}
 int main(){
 	char c;
 	char *s;
@@ -522,8 +530,15 @@ int main(){
 					break;
 				case 11:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.GhiFile();
+					gotoxy(60,4);
+					textcolor(10);
+					cout<<"Ghi danh sach vao file Student.txt thanh cong!";
+					textcolor(15);
+					gotoxy(60,6);
+					cout<<"\nFile duoc luu cung thu muc voi chuong trinh!";
+					cout<<"\n\n\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 12:
