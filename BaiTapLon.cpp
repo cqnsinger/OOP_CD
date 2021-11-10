@@ -380,8 +380,102 @@ void ThaoTac::Add(){
 	textcolor(15);
 }
 int main(){
-	SinhVien s;
-	ThaoTac act;
-	int n;
-	s.Nhap();
+	char c;
+	char *s;
+	int tt=1;
+	while(1){
+		resizeConsole(1300, 800);
+		system("cls");
+		Nocurs();
+		MainMenu(tt);
+		c=getch();
+			if( c==72 ){
+				if(tt!=1)
+					tt--;
+			}
+			if( c==80 ){
+				if(tt!=12)
+					tt++;
+			}
+			if( c==13 ){
+			switch(tt){
+				case 1:	
+					system("cls");
+					cout<<"Chuc nang 1!"<<endl;
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();				
+					break;
+				case 2:
+					system("cls");
+					cout<<"Chuc nang 2!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 3:
+					system("cls");
+					cout<<"Chuc nang 3!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 4:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 5:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 6:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 7:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 8:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 9:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 10:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 11:
+					system("cls");
+					cout<<"Chuc nang 4!";
+					cout<<"Nhan phim bat ki de tiep tuc!";
+					getch();
+					break;
+				case 12:
+					system("cls");
+					cout<<"Xac nhan thoat chuong trinh!"<<endl;
+					cout<<"Esc: Huy bo    ||    Enter: Thoat";
+					char cf=getch();
+					if (cf==27)
+						break;
+					else if(cf==13)
+						return 0;
+				}
+			}
 	}
+}
+
