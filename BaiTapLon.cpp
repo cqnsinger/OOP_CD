@@ -372,12 +372,26 @@ void ThaoTac::Delete(){
 void ThaoTac::Add(){
 	SinhVien *s;
 	s=new SinhVien;
-	s->Nhap();
-	SV.push_back(s);
-	cout<<"\n****************************\n";
-	textcolor(10);
-	cout<<"Them sinh vien thanh cong!";
-	textcolor(15);
+	if(SV.size()==0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Danh sach chua duoc khoi tao, hay khoi tao danh sach truoc!"<<endl;
+		textcolor(15);
+	}
+	else{
+		textcolor(11);
+		cout<<"\n\tTHEM SINH VIEN VAO DANH SACH"<<endl;
+		textcolor(15);
+		cout<<"\n****************************************"<<endl;
+		s->Nhap();
+		SV.push_back(s);
+		system("cls");
+		textcolor(10);
+		cout<<"\n\n*****************************"<<endl;
+		cout<<"        Them thanh cong!     "<<endl;
+		cout<<"*****************************"<<endl;
+		textcolor(15);
+	}
 }
 int main(){
 	char c;
@@ -401,20 +415,23 @@ int main(){
 			switch(tt){
 				case 1:	
 					system("cls");
-					cout<<"Chuc nang 1!"<<endl;
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.TaoDS();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();				
 					break;
 				case 2:
 					system("cls");
-					cout<<"Chuc nang 2!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.XuatDS();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 3:
 					system("cls");
-					cout<<"Chuc nang 3!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.Add();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 4:
