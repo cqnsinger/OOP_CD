@@ -476,8 +476,9 @@ int main(){
 					break;
 				case 7:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.SearchMSV();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 8:
