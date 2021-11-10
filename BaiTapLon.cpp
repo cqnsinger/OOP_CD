@@ -313,21 +313,41 @@ void ThaoTac::SearchName(){
 }
 void ThaoTac::SearchMSV(){
 	string SMSV;
+	int STT=0;
 	int dem;
-	cout <<"Nhap MSV can tim: ";
-	fflush(stdin);
-	getline(cin,SMSV);
-	for(int i=0; i<SV.size(); i++){
-		if(SMSV.compare(SV.at(i)->getMSV())==0){
-			HeadTable();
-			SV.at(i)->Xuat(i);
-			dem++;
-		}
-	if(dem==0){
+	if(SV.size()==0){
+		gotoxy(60,3);
 		textcolor(12);
-		cout<<"Khong tim thay sinh vien co MSV vua nhap!!!";
+		cout<<"Hien chua co sinh vien nao!!!"<<endl;
 		textcolor(15);
 	}
+	else{
+		cout <<"Nhap MSV can tim: ";
+		fflush(stdin);
+		getline(cin,SMSV);
+		for(int i=0; i<SV.size(); i++){
+			if(SMSV.compare(SV.at(i)->getID())==0){
+				system("cls");
+				gotoxy(60,1);
+				textcolor(223);
+				cout<<"                                                     ";
+				gotoxy(60,2);
+				cout<<"                SINH VIEN CAN TIM                    ";
+				gotoxy(60,3);
+				cout<<"                                                     ";
+				HeadTable();
+				gotoxy(7,STT+5);
+				cout<<STT+1;
+				SV.at(i)->Xuat(STT);
+				dem++;
+			}
+		}
+		if(dem==0){
+			textcolor(12);
+			gotoxy(60,3);
+			cout<<"Khong tim thay sinh vien co MSV vua nhap!!!\n\n";
+			textcolor(15);
+		}
 	}
 }
 void ThaoTac::Warning(){
