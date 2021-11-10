@@ -142,7 +142,7 @@ class ThaoTac{
 	private:
 		vector <SinhVien *> SV;
 	public:
-		void NhapDS();
+		void TaoDS();
 		void HeadTable();
 		void XuatDS();
 		void GPASort();
@@ -154,24 +154,45 @@ class ThaoTac{
 		void Add();
 		void Warning();
 };
-void ThaoTac::NhapDS(){
+void ThaoTac::TaoDS(){
 	SinhVien *st;
 	int n;
-	cout<<"Nhap so luong Sinh Vien: ";
-	cin>>n;
-	if(n==0){
-		cout<<"\n********************************\n";
-		cout<<"Ban chua nhap Sinh Vien nao"<<endl;
+	if(SV.size()!=0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Danh sach da duoc khoi tao, hay su dung cac thao tac chinh sua!"<<endl;
+		textcolor(15);
 	}
 	else{
-		for(int i=0; i<n; i++){
-			cout<<"\n********************************\n";
-			st=new SinhVien;
-			st->Nhap();
-			SV.push_back(st);
+		cout<<"Nhap so luong Sinh Vien: ";
+		cin>>n;
+		system("cls");
+		if(n==0){
+			system("cls");
+			textcolor(12);
+			cout<<"\n\n********************************"<<endl;
+			cout<<"     Chua nhap sinh vien nao!   "<<endl;
+			cout<<"********************************"<<endl;
+			textcolor(15);
 		}
-		cout<<"\n********************************\n";
-		cout<<"Nhap thanh cong!"<<endl;
+		else{
+			textcolor(11);
+			cout<<"\n\tNHAP DANH SACH SINH VIEN"<<endl;
+			textcolor(15);
+			cout<<"\n****************************************"<<endl;
+			for(int i=0; i<n; i++){
+				st=new SinhVien;
+				st->Nhap();
+				SV.push_back(st);
+				cout<<"\n****************************************\n";
+			}
+			system("cls");
+			textcolor(10);
+			cout<<"\n\n*****************************"<<endl;
+			cout<<"        Nhap thanh cong!     "<<endl;
+			cout<<"*****************************"<<endl;
+			textcolor(15);
+		}
 	}
 }
 void ThaoTac::HeadTable(){
