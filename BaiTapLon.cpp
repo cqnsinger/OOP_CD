@@ -1,9 +1,11 @@
-#include<iostream>
-#include<windows.h>
-#include "dohoa.h"
-#include<conio.h>
-#include<cstdlib>
-#include <fstream>
+#include<iostream>	//thu vien nhap xuat	
+#include<windows.h>	//thu vien dinh dang cua so
+#include "graph.h"	//thu vien do hoa	
+#include<conio.h>	//thu viet de lay ki tu tu ban phim
+#include<cstdlib>	//thu vien de su dung system("cls")
+#include<vector>	//thu vien stl vector
+#include<fstream>	//thu vien doc ghi du lieu
+#include<iomanip>	//thu vien de su dung ham lam tron
 using namespace std;
 using namespace std;
 struct DOB{
@@ -218,12 +220,7 @@ void ThaoTac::HeadTable(){
 	gotoxy(143, 4);
 	cout<<"Diem TB        ";
 	textcolor(15);
-	for(int i=0; i<SV.size(); i++){
-		gotoxy(7,i+5);
-		cout<<i+1;
-		SV.at(i)->Xuat(i);
-		}
-	}
+}
 void ThaoTac::XuatDS(){
 	gotoxy(60,1);
 	textcolor(223);
@@ -233,6 +230,11 @@ void ThaoTac::XuatDS(){
 	gotoxy(60,3);
 	cout<<"                                                     ";
 	HeadTable();
+	for(int i=0; i<SV.size(); i++){
+		gotoxy(7,i+5);
+		cout<<i+1;
+		SV.at(i)->Xuat(i);
+	}
 	if(SV.size()==0){
 		textcolor(4);
 		gotoxy(60,8);
@@ -242,7 +244,7 @@ void ThaoTac::XuatDS(){
 	else{
 		cout<<"\n\n\n\n\n********************************\n";
 		textcolor(10);
-		cout<<"Danh sach co "<<SV.size()<<" Sinh Vien."<<endl;
+		cout<<"=> Danh sach co "<<SV.size()<<" Sinh Vien."<<endl;
 		textcolor(15);	
 	}
 }
@@ -483,9 +485,16 @@ int main(){
 					getch();
 					break;
 				case 12:
+					case 12:
 					system("cls");
-					cout<<"Xac nhan thoat chuong trinh!"<<endl;
-					cout<<"Esc: Huy bo    ||    Enter: Thoat";
+					cout<<endl<<"    Xac nhan thoat chuong trinh!"<<endl<<endl;
+					textcolor(79);
+					cout<<" Esc: Huy bo ";
+					textcolor(15);
+					cout<<"    ||    ";
+					textcolor(160);
+					cout<<" Enter: Thoat ";
+					textcolor(15);
 					char cf=getch();
 					if (cf==27)
 						break;
