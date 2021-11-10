@@ -371,15 +371,30 @@ void ThaoTac::SearchMSV(){
 	}
 }
 void ThaoTac::Warning(){
+	int dem=0;
+	int STT=0;
+	gotoxy(60,1);
+	textcolor(223);
+	cout<<"                                                     ";
+	gotoxy(60,2);
+	cout<<"       DANH SACH SINH VIEN BI CANH BAO HOC TAP       ";
+	gotoxy(60,3);
+	cout<<"                                                     ";
+	HeadTable();
 	for(int i=0; i<SV.size(); i++){
-		if(SV.at(i)->getToan() < 4 && SV.at(i)->getTin() <4 && SV.at(i)->getEng() <4){
-			HeadTable();
-			SV.at(i)->Xuat(i);	
+		if(SV.at(i)->getToan() < 4 && SV.at(i)->getTin() < 4 && SV.at(i)->getEng() <4){
+			gotoxy(7,STT+5);
+			cout<<STT+1;
+			SV.at(i)->Xuat(STT);
+			STT++;
+			dem++;	
 		}
-		else
-			textcolor(12);
-			cout<<"Khong co sinh vien nao bi canh bao hoc tap!!!";
-			textcolor(15);
+	}
+	if(dem==0){
+		textcolor(12);
+		gotoxy(60,6);
+		cout<<"Khong co sinh vien nao bi canh bao hoc tap!!!\n\n";
+		textcolor(15);
 	}
 }
 void ThaoTac::Delete(){
@@ -524,8 +539,9 @@ int main(){
 					break;
 				case 10:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.Warning();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 11:
