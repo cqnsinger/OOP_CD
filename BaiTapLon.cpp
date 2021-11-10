@@ -294,19 +294,39 @@ void ThaoTac::Edit(){
 }
 void ThaoTac::SearchName(){
 	string SName;
-	int dem;
-	cout <<"Nhap ten sinh vien can tim: ";
-	fflush(stdin);
-	getline(cin,SName);
-	for(int i=0; i<SV.size(); i++){
-		if(SName.compare(SV.at(i)->getName())==0){
-			HeadTable();
-			SV.at(i)->Xuat(i);
-			dem++;
+	int STT=0;
+	int dem=0;
+	if(SV.size()==0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Hien chua co sinh vien nao!!!"<<endl;
+		textcolor(15);
+	}
+	else{
+		cout <<"Nhap ten sinh vien can tim: ";
+		fflush(stdin);
+		getline(cin,SName);
+		for(int i=0; i<SV.size(); i++){
+			if(SName.compare(SV.at(i)->getName())==0){
+				system("cls");
+				gotoxy(60,1);
+				textcolor(223);
+				cout<<"                                                     ";
+				gotoxy(60,2);
+				cout<<"                SINH VIEN CAN TIM                    ";
+				gotoxy(60,3);
+				cout<<"                                                     ";
+				HeadTable();
+				gotoxy(7,STT+5);
+				cout<<STT+1;
+				SV.at(i)->Xuat(STT);
+				dem++;
+			}
 		}
 		if(dem==0){
 			textcolor(12);
-			cout <<"Khong tim thay sinh vien can tim!!!";
+			gotoxy(60,3);
+			cout <<"Khong tim thay sinh vien can tim!!!\n\n";
 			textcolor(15);
 		}
 	}
@@ -470,8 +490,9 @@ int main(){
 					break;
 				case 6:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.SearchName();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 7:
