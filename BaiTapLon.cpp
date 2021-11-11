@@ -12,6 +12,19 @@ struct DOB{
 	int month;
 	int year;
 };
+istream& operator >> (istream &i, DOB &d){
+	cout << "\n\tNhap ngay: ";
+	i>>d.day;
+	cout<<"\tNhap thang: ";
+	i>>d.month;
+	cout<<"\tNhap thang: ";
+	i>>d.year;
+	return i;
+}
+ostream& operator << (ostream &o, const DOB &d){
+	o<<d.day<<"/"<<d.month<<"/"<<d.year;
+	return o;
+}
 class score{
 	private:
 		float s_toan, s_tin, s_eng;
@@ -96,18 +109,7 @@ void SinhVien::Nhap(){
 	fflush(stdin);
 	cin>>Gender;
 	cout<<"Nhap ngay sinh: ";
-	do{
-	cout<<"\n\tNhap ngay sinh: ";
-	cin>>d.day;
-	}while(d.day<=0&&d.day>31);
-	do{
-	cout<<"\tNhap thang sinh: ";
-	cin>>d.month;
-	}while(d.month<=0&&d.month>12);
-	do{
-	cout<<"\tNhap nam sinh: ";
-	cin>>d.year;
-	}while(d.year<0&&d.year>2021);
+	cin>>d;
 	NhapI();
 	}
 void SinhVien::Xuat(int i){
@@ -126,7 +128,7 @@ void SinhVien::Xuat(int i){
 		cout<<"Khac";
 	}
 	gotoxy(50, i+5);
-	cout<<d.day<<"/"<<d.month<<"/"<<d.year;
+	cout<<d;
 	XuatI(i);
 	}
 
