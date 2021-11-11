@@ -13,10 +13,6 @@ struct DOB{
 	int month;
 	int year;
 };
-struct Name{
-	string Firstname;
-	string Lastname;
-};
 class score{
 	private:
 		float s_toan, s_tin, s_eng;
@@ -83,16 +79,14 @@ class infoST:public score{
 	};
 class SinhVien:public infoST{
 	private: 
-		Name n;
-		string Gender, DOB;
+		string Name; 
+		int Gender; 
+		DOB d;
 	public:
 		void Nhap();
 		void Xuat(int i);
-		string getFirstname(){
-			return n.Lastname;
-		}
-		string getLaststname(){
-			return n.Firstname;
+		string GetName(){
+			return Name;
 		}
 	};
 void SinhVien::Nhap(){
@@ -259,22 +253,14 @@ void ThaoTac::GPASort(){
                 }
             }
 	}
-void ThaoTac::NameSort(){
-	for(int i=0;i<SV.size()-1;i++){
-		for(int j=i+1;j<SV.size();j++){
-		   if((SV.at(i)->getLastname()).compare(SV.at(j)->getLastname())>0){
-				SinhVien *k = SV.at(i);
-            	SV.at(i)=SV.at(j);
-            	SV.at(j)=k;
-			}
-		}
-	} 
-}
 void ThaoTac::Edit(){
 	string k;
 	int d=0;
 	if(SV.size()==0){
-		cout<<"Hien chua co sinh vien nao!!!";
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Hien chua co sinh vien nao!!!"<<endl;
+		textcolor(15);
 	}
 	else{
 		cout<<"Nhap MSSV can thay doi thong tin: ";
@@ -287,8 +273,10 @@ void ThaoTac::Edit(){
 			}
 		}
 		if(d==0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout <<"Khong tim thay sinh vien can sua!!!\n\n";
 		textcolor(15);
-		cout <<"Khong tim thay MSSV can tim!!!";
 		}
 	}	
 }
