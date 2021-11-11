@@ -455,15 +455,18 @@ void ThaoTac::Delete(){
 			if(k.compare(SV.at(i)->getID())==0){
 				SV.erase(SV.begin()+i);
 				textcolor(10);
-				cout<<"Xoa thanh cong!";
+				cout<<"\n\n*****************************"<<endl;
+				cout<<"        Xoa thanh cong!      "<<endl;
+				cout<<"*****************************"<<endl;
 				textcolor(15);
 				dem=1;
 			}
-			if(dem!=1){
+		}
+		if(dem!=1){
 				textcolor(12);
-				cout<<"Khong tim thay MSSV can xoa!!!";
+				gotoxy(60,3);
+				cout<<"Khong tim thay MSSV can xoa!!!\n\n";
 				textcolor(15);	
-			}
 		}
 	}
 }
