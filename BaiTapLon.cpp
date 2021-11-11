@@ -245,7 +245,7 @@ void ThaoTac::XuatDS(){
 void ThaoTac::GPASort(){
 	for(int i=0;i<SV.size()-1;i++){
                 for(int j=i+1;j<SV.size();j++){
-                    if(SV.at(i)->GetGPA() < SV.at(j)->GetGPA()){
+                    if(SV.at(i)->getGPA() < SV.at(j)->getGPA()){
                         SinhVien *t= SV.at(i);
                         SV.at(i)=SV.at(j);
                         SV.at(j)=t;
@@ -573,14 +573,20 @@ int main(){
 					break;
 				case 8:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.ClassList();
+					cout<<"\n\n\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 9:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.GPASort();
+					gotoxy(60,4);
+					textcolor(10);
+					cout<<"Sap xep danh sach theo DTB thanh cong!";
+					textcolor(15);
+					cout<<"\n\n\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 10:
