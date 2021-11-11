@@ -242,6 +242,13 @@ void ThaoTac::XuatDS(){
 	}
 }
 void ThaoTac::GPASort(){
+	if(SV.size()==0){
+		gotoxy(60,3);
+		textcolor(12);
+		cout<<"Hien chua co sinh vien nao!!!"<<endl;
+		textcolor(15);
+	}
+	else{
 	for(int i=0;i<SV.size()-1;i++){
                 for(int j=i+1;j<SV.size();j++){
                     if(SV.at(i)->getGPA() < SV.at(j)->getGPA()){
@@ -251,7 +258,11 @@ void ThaoTac::GPASort(){
                     }
                 }
             }
+            gotoxy(60,4);
+			textcolor(10);
+			cout<<"Sap xep danh sach theo DTB thanh cong!"; 
 	}
+}
 void ThaoTac::ClassList(){
 	int dem=0;
 	int STT=0;
@@ -643,10 +654,6 @@ int main(){
 				case 9:
 					system("cls");
 					act.GPASort();
-					gotoxy(60,4);
-					textcolor(10);
-					cout<<"Sap xep danh sach theo DTB thanh cong!";
-					textcolor(15);
 					cout<<"\n\n\n********************************\n";
 					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
