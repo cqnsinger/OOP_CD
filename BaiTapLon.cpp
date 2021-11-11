@@ -502,7 +502,70 @@ void ThaoTac::GhiFile(){
 		}
     FileSt.close();
 	}
+void ChucNang(int i){
+	if(i==1){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      1. Khoi tao danh sach sinh vien        "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==2){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      2. Xuat danh sach sinh vien            "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==3){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      3. Them sinh vien                      "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==4){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      4. Sua thong tin sinh vien             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==5){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      5. Xoa sinh vien                       "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==6){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      6. Tim kiem SV theo ten                "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==7){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      7. Tim kiem SV theo MSV                "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==8){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      8. In danh sach lop                    "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==9){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      9. Sap xep theo DTB                    "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==10){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      10. Loc cac SV bi canh bao hoc tap     "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==11){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      11. Ghi vao file St.txt                "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t_____________________________________________"<<endl;
+		}
+	else if(i==12){
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t      12. Thoat chuong trinh                 "<<endl;
+		cout<<"\t\t\t\t\t\t\t\t                                             "<<endl;
+		}
+	}
 int main(){
+	thaotac act;
 	char c;
 	char *s;
 	int tt=1;
