@@ -90,12 +90,9 @@ class SinhVien:public infoST{
 		}
 	};
 void SinhVien::Nhap(){
-	cout<<"Nhap ho ten dem: ";
+	cout<<"Nhap ho ten: ";
 	fflush(stdin);
-	getline(cin,n.Firstname);
-	cout<<"Nhap ten: ";
-	fflush(stdin);
-	getline(cin,n.Lastname);
+	getline(cin,Name);
 	cout<<"Nhap gioi tinh (1. Nam | 2. Nu | 3. Khac): ";
 	fflush(stdin);
 	cin>>Gender;
@@ -116,23 +113,23 @@ void SinhVien::Nhap(){
 	}
 void SinhVien::Xuat(int i){
 	gotoxy(15, i+5);
-	cout<<n.Firstname<<" "<<n.Lastname;
+	cout<<Name;
 	if(Gender == 1){
 		gotoxy(38, i+5);
 		cout<<"Nam";
 	}
 	else if(Gender == 2){
-		gotoxy(35, i+5);
+		gotoxy(38, i+5);
 		cout<<"Nu";
 	}
 	else if(Gender == 3){
-		gotoxy(35, i+5);
+		gotoxy(38, i+5);
 		cout<<"Khac";
 	}
 	gotoxy(50, i+5);
 	cout<<d.day<<"/"<<d.month<<"/"<<d.year;
 	XuatI(i);
-}
+	}
 
 class ThaoTac{
 	private:
