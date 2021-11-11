@@ -7,7 +7,6 @@
 #include<fstream>	//thu vien doc ghi du lieu
 #include<iomanip>	//thu vien de su dung ham lam tron
 using namespace std;
-using namespace std;
 struct DOB{
 	int day;
 	int month;
@@ -141,10 +140,11 @@ class ThaoTac{
 		void GPASort();
 		void ClassList();
 		void Edit();
+		void Delete();
+		void GhiFile();
+		void Add();
 		void SearchName();
 		void SearchMSV();
-		void Delete();
-		void Add();
 		void Warning();
 };
 void ThaoTac::TaoDS(){
