@@ -142,7 +142,7 @@ class ThaoTac{
 		void HeadTable();
 		void XuatDS();
 		void GPASort();
-		void NameSort();
+		void ClassList();
 		void Edit();
 		void SearchName();
 		void SearchMSV();
@@ -253,6 +253,59 @@ void ThaoTac::GPASort(){
                 }
             }
 	}
+void ThaoTac::ClassList(){
+	int dem=0;
+	int STT=0;
+	string Cl;
+	cout<<"Nhap lop: ";
+	fflush(stdin);
+	getline(cin, Cl);
+	gotoxy(60,1);
+	textcolor(223);
+	cout<<"                                                     ";
+	gotoxy(60,2);
+	cout<<"                 DANH SACH LOP                       ";
+	gotoxy(60,3);
+	cout<<"                                                     ";
+	HeadTable();
+	for(int i=0; i<SV.size(); i++){
+		if(Cl.compare(SV.at(i)->getClass())==0){
+			gotoxy(7,dem+5);
+			cout<<dem+1;
+			SV.at(i)->Xuat(dem);
+			dem++;	
+		}
+	}
+	if(dem==0){
+		textcolor(12);
+		gotoxy(60,6);
+		cout<<"Khong co sinh vien nao thuoc lop "<<Cl<<" !!!\n\n";
+		textcolor(15);
+	}
+	else if(dem!=0){
+		cout<<"\n\n Ban co muon ghi danh sach lop vao file Class.txt"<<endl;
+		cout<<" Esc: Khong ghi file || Enter: ghi file ";
+		char a=getch();
+		if (a==27)
+			return;
+		else if(a==13){
+			ofstream FileSt ("Class.txt");
+			FileSt<<"Danh sach lop "<<Cl<<endl;
+		    FileSt<<"STT\t\tHo ten\t\t\tMa sinh vien\t\tDiem toan\tDiem tin\tDiem T.A\tDiem TB"<<endl;
+		    for(int i; i<SV.size(); i++){
+		    	if(Cl.compare(SV.at(i)->getClass())==0){
+		    		int STT=0;
+		    		FileSt<<STT+1<<"\t\t"<<SV.at(i)->getName()<<"\t\t"<<SV.at(i)->getID()<<"\t\t"<<SV.at(i)->getToan()<<"\t\t"<<SV.at(i)->getTin()<<"\t\t"<<SV.at(i)->getEng()<<"\t\t"<<SV.at(i)->getGPA()<<"\t\t"<<endl;
+					STT++;
+				}
+			}
+		    FileSt.close();
+		    textcolor(10);
+		    cout<<"\n\n\n\t\tGhi file thanh cong!"<<endl;
+			textcolor(15);
+		}
+	}
+}
 void ThaoTac::Edit(){
 	string k;
 	int d=0;
@@ -489,14 +542,16 @@ int main(){
 					break;
 				case 4:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.Edit();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 5:
 					system("cls");
-					cout<<"Chuc nang 4!";
-					cout<<"Nhan phim bat ki de tiep tuc!";
+					act.Delete();
+					cout<<"\n********************************\n";
+					cout<<"\nNhan phim bat ki de quay lai Menu!";
 					getch();
 					break;
 				case 6:
